@@ -41,7 +41,6 @@ y2 = y1 + h
 
 # Saída
 
-
 frame_count = int(capture.get(cv2.CAP_PROP_FRAME_COUNT)) - 1
 fps = capture.get(cv2.CAP_PROP_FPS)
 
@@ -75,28 +74,15 @@ for c in tqdm(range(frame_count)):
         cv2.rectangle(frame, (x1, y1), (x2, y2), (255, 0, 0), 2)
         
         if label in cars:
-            # Insere texto verde na imagem
             cv2.putText(frame, "Carro", (x1, y1-5), font, 1, (0, 255, 0), 2)
             cv2.putText(frame, str(round(ths * 100)) + "%", (x2-60, y1-5), font, 1, (0, 255, 0), 2)
         
-        # Caso não estiver na lista
         else:
-            # Insere texto vermelho na imagem
             cv2.putText(frame, 'Outro', (x1, y1-5), font, 1, (0, 0, 255), 2)
 
-        
-        '''if  > threshold:
-            print('Predicted:', result[0][0][1])
-        else:
-            print('Nada encontrado.')'''
-        
         saida_video.write(frame)
 
         c += 1
-        
-        #for c in tqdm(range(frame_count)):
-            #pass
-        #print("Frames processados:", c, "de", frame_count)
         
     if cv2.waitKey(1) == 27:
         break
@@ -104,4 +90,3 @@ for c in tqdm(range(frame_count)):
 capture.release()
 saida_video.release()
 cv2.destroyAllWindows()
-    
