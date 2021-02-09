@@ -1,6 +1,6 @@
-# detector-roi-resnet
+# Classificação de Imagens
 
-Classificador de objetos dentro de uma área especificada usando OpenCV e ResNet.
+Classificador de objetos dentro de uma área especificada usando OpenCV e uma CNN (ResNet50).
 
 [DEMO](https://youtu.be/dBeMK_0Ssjg)
 
